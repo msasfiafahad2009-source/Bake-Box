@@ -1,23 +1,48 @@
-import BrownieCard from './BrownieCard';
-import NankhataiCard from './NankhataiCard';
-import RollCard from './RollCard';
-
-export default function ProductSection() {
+import ProductCard from './ProductCard';
+import nankhataiImg from '../../assets/Screenshot 2026-11-21 182024.png';
+import brownieImg from '../../assets/Screenshot 2026-11-23 105012.png';
+import rollImg from '../../assets/Screenshot 2026-11-23 105827.png';
+function ProductSection() {
   return (
-    <section id="menu" className="section-block">
-      <div className="section-header-center">
-        <span className="section-kicker">Fresh From Noor&apos;s Oven</span>
-        <h2 className="section-title">Signature Storybook Treats</h2>
-        <p className="section-desc">
-          Baked in small batches every morning using real butter, Belgian
-          cocoa, and aromatic spices.
-        </p>
+    <section id="menu" className="products-section">
+      <div className="section-heading">
+        <h2>Today&apos;s Bake Box Menu</h2>
+        <p>Select your quantities below — your order slip updates automatically.</p>
       </div>
       <div className="products-grid">
-        <BrownieCard />
-        <NankhataiCard />
-        <RollCard />
+        <ProductCard
+          id="brownie"
+          name="Fudge Walnut Brownie"
+          badgeText="Bestseller"
+          badgeType="jam"
+          description="Dark roasted cocoa folded with toasted walnuts and a crisp, crackly top."
+          price={350}
+          imageSrc={brownieImg}
+        />
+        <ProductCard
+          id="nankhatai"
+          name="Cardamom Pistachio Nankhatai"
+          badgeText="Fresh Batch"
+          badgeType="pistachio"
+          description="Melt-in-your-mouth traditional shortbread infused with green cardamom and roasted pistachio."
+          price={250}
+          imageSrc={nankhataiImg}
+          imageAlt="Golden cardamom pistachio nankhatai cookies"
+        />
+
+        <ProductCard
+          id="roll"
+          name="Caramel Cinnamon Roll"
+          badgeText="Warm & Glazed"
+          badgeType="caramel"
+          description="Soft brioche spiral swirled with Ceylon cinnamon and drizzled with salted honey caramel."
+          price={400}
+          imageSrc={rollImg}
+          imageAlt="Warm caramel cinnamon roll"
+        />
       </div>
     </section>
   );
 }
+
+export default ProductSection;
