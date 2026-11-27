@@ -1,7 +1,7 @@
-import ProductCard from './ProductCard';
-import nankhataiImg from '../../assets/Screenshot 2026-11-21 182024.png';
-import brownieImg from '../../assets/Screenshot 2026-11-23 105012.png';
-import rollImg from '../../assets/Screenshot 2026-11-23 105827.png';
+import ProductCard from "./ProductCard";
+import nankhataiImg from "./assets/Nankhatai.png";
+import brownieImg from "./assets/Brownie.png";
+import rollImg from "./assets/Roll.png";
 function ProductSection() {
   return (
     <section id="menu" className="products-section">

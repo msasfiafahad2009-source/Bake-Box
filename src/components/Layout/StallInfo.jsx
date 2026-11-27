@@ -1,4 +1,3 @@
-// src/components/layout/StallInfo.jsx
 export default function StallInfo() {
   return (
     <div>

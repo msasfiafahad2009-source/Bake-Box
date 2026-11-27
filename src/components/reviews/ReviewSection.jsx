@@ -1,32 +1,31 @@
-import React from 'react';
+import { reviews } from "./data/reviews.js";
 import ReviewCard from './ReviewCard';
 
 function ReviewSection() {
+  if (reviews.length === 0) {
+    return <p>No reviews yet. Be the first!</p>;
+  }
+
+  let totalRating = 0;
+  for (let i = 0; i < reviews.length; i++) {
+    totalRating += reviews[i].rating;
+  }
+  const average = (totalRating / reviews.length).toFixed(1);
+
   return (
     <section id="reviews" className="reviews-section">
-      <div className="section-heading">
-        <h2>Kind Words from Bake Box Guests</h2>
-        <p>Freshly baked in small batches and loved across campus.</p>
-      </div>
+      <h2>WHAT CUSTOMERS SAY</h2>
+      <p>Average rating: {average}</p>
 
       <div className="reviews-grid">
-        <ReviewCard
-          reviewerName="Hira Malik"
-          initials="HM"
-          badgeLabel="Verified Order"
-          rating={5}
-          quote="The Fudge Walnut Brownie arrived still warm with that glossy crackly top—hands down the richest cocoa flavor I've had all semester."
-          orderedItem="Fudge Walnut Brownie"
-        />
-
-        <ReviewCard
-          reviewerName="Sara Ahmed"
-          initials="SA"
-          badgeLabel="Repeat Guest"
-          rating={5}
-          quote="Melts right on the tongue! The cardamom and roasted pistachio aroma in the Nankhatai feels straight out of a storybook kitchen."
-          orderedItem="Cardamom Pistachio Nankhatai"
-        />
+        {reviews.map((review) => (
+          <ReviewCard
+            key={review.id}
+            name={review.name}
+            rating={review.rating}
+            comment={review.comment}
+          />
+        ))}
       </div>
     </section>
   );
