@@ -1,4 +1,3 @@
-// src/components/layout/ContactInfo.jsx
 export default function ContactInfo() {
   return (
     <div>
